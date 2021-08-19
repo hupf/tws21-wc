@@ -1,0 +1,140 @@
+= Lab: Counter Component in Plain JavaScript
+
+== Render Custom Element
+
+Create an HTML file with a basic skeleton and open it in your browser:
+
+.counter.html
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Counter</title>
+</head>
+<body>
+
+</body>
+</html>
+----
+
+Within the `<body>`, add a template with a simple paragraph:
+
+[source,html]
+----
+<template id="counter-template">
+  <p>Count:</p>
+</template>
+----
+
+Below the template, implement a Custom Element that renders the template's contents:
+
+[source,html]
+----
+<script>
+  class Counter extends HTMLElement {
+    constructor() {
+      super();
+      const template = document.getElementById("counter-template");
+      const content = template.content.cloneNode(true);
+      this.append(content);
+    }
+  }
+ customElements.define("counter", Counter);
+</script>
+----
+
+When you now add your Custom Element to the top of the `<body>`, you should be able to see the text "Count:" rendered in your browser:
+
+[source,html]
+----
+  <counter></counter>
+----
+
+
+== Add Button & Render Count
+
+Now add a button to your component:
+
+[source,html]
+----
+<button>increment</button>
+----
+
+Then start listening to its `click` event:
+
+[source,javascript]
+----
+<script>
+  class Counter extends HTMLElement {
+    // ...
+
+    connectedCallback() {
+      const button = this.querySelector("button");
+      button.addEventListener("click", this.increment.bind(this), true);
+    }
+
+    increment() {
+      console.log("increment");
+    }
+  }
+ customElements.define("counter", Counter);
+</script>
+----
+
+Can you see the log output when clicking on the button?
+
+Great, then you can add an element to the paragraph, that we can use to display the current count:
+
+[source,html]
+----
+<p>Count: <span class="count">0</span></p>
+----
+
+The implementation of the remaining counter logic is up to you:
+
+- Add a property on your component to store the current count
+- Initialize the property in the `constructor`
+- Increment the property and update the `textContent` of the `<span>` with the incremented value
+
+== Use Shadow DOM
+
+Now that you have a working Custom Element you may refactor it to use Shadow DOM.
+
+Attach a shadow root to your Custom Element in the `constructor`:
+
+[source,javascript]
+----
+this.attachShadow({ mode: "open" });
+----
+
+Append the template contents to `this.shadowRoot` instead of the Custom Element itself.
+
+Inspect the changes in your browser's dev tools.
+
+== Style the Component
+
+Add some "shadow styles" to the template:
+
+[source,html]
+----
+<style>
+  :host {
+    display: flex;
+    gap: 1rem;
+  }
+</style>
+----
+
+You may also try to add styles for the `button` element to the light DOM (e.g. in a `<style>` tag in the `<head>` of your document), to ensure they don't affect the component's button in the Shadow DOM.
+
+
+== Futher Topics
+
+Some ideas for further improvements of your component:
+
+- Reflect the count to an HTML attribute of your Custom Element (i.e. allow to initialize/set the count or read the count via an attribute)
+- Dispatch an event with the new value whenever the count is incremented
+- Add "style hooks", i.e. allow customize the look of your Custom Element via CSS Custom Properties

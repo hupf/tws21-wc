@@ -1,0 +1,9 @@
+= Lab: Tabs Component with Lit
+
+Scaffold a new project:
+
+    npm init @open-wc
+
+TIP: Choose _Web Component_  and _Linting_, no TypeScript and use `tws-tags` as name of the component. A new directory will be created.
+
+Start the development server using `npm start` and study the generated files.
