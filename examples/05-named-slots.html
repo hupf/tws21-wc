@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Named Slots</title>
+</head>
+<body>
+  <my-component>
+    <p slot="message">Hello</p>
+    <img slot="image" src="http://www.lenna.org/len_std.jpg" alt="Lenna" />
+  </my-component>
+
+  <template id="my-template">
+    <style>
+     .container {
+       display: flex;
+       gap: 1rem;
+       padding: 1rem;
+       background: salmon;
+     }
+     ::slotted([slot="image"]) {
+       width: 4rem;
+     }
+     slot[name="image"] {
+       border: 5px solid black;
+     }
+    </style>
+    <div class="container">
+      <slot name="image"></slot>
+      <slot name="message"></slot>
+    </div>
+  </template>
+  <script>
+    class MyComponent extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: "open" });
+
+        const template = document.getElementById("my-template");
+        const content = template.content.cloneNode(true);
+        this.shadowRoot.append(content);
+      }
+    }
+
+    customElements.define("my-component", MyComponent);
+  </script>
+</body>
+</html>

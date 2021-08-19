@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>HTML Template</title>
+</head>
+<body>
+  <my-component></my-component>
+
+  <template id="my-template">
+    <style>
+     :host {
+       display: block;
+       padding: 1rem;
+       background: lightblue;
+     }
+     .square {
+       background: salmon;
+       width: 100px;
+       height: 100px;
+     }
+    </style>
+    <p class="square"></p>
+  </template>
+  <script>
+    class MyComponent extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: "open" });
+
+        const template = document.getElementById("my-template");
+        const content = template.content.cloneNode(true);
+        this.shadowRoot.append(content);
+      }
+    }
+
+    customElements.define("my-component", MyComponent);
+  </script>
+</body>
+</html>
