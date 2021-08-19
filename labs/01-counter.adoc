@@ -137,4 +137,4 @@ Some ideas for further improvements of your component:
 
 - Reflect the count to an HTML attribute of your Custom Element (i.e. allow to initialize/set the count or read the count via an attribute)
 - Dispatch an event with the new value whenever the count is incremented
-- Add "style hooks", i.e. allow customize the look of your Custom Element via CSS Custom Properties
+- Add https://developers.google.com/web/fundamentals/web-components/shadowdom#stylehooks[style hooks], i.e. allow to customize the look of your Custom Element via CSS Custom Properties

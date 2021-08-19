@@ -2,14 +2,14 @@
 
 == Agenda
 
-- https://slides.com/hupf/tws22-wc/[Introduction]
+- https://slides.com/hupf/tws22-wc/[Preliminary Slides]
 - link:labs/01-counter.adoc[Lab: Counter Component in Plain JavaScript]
 - link:labs/02-tabs.adoc[Lab: Tabs Component with Lit]
 
 
 == Further Topics
 
-- Implement Web Components with your favorite JavaScript framework (e.g. using https://angular.io/guide/elements[Angular elements] or https://cli.vuejs.org/guide/build-targets.html#web-component[Vue Web Components])
+- Implement Web Components with your favorite JavaScript framework (e.g. using https://angular.io/guide/elements[Angular elements], https://cli.vuejs.org/guide/build-targets.html#web-component[Vue Web Components] etc.)
 - Create a new app with your favorite JavaScript framework using the https://github.com/puzzle/puzzle-shell[Puzzle Shell] Web Components
 
 
