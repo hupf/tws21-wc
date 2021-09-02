@@ -2,20 +2,24 @@
 
 == Agenda
 
-- https://slides.com/hupf/tws22-wc/[Preliminary Slides]
-- link:labs/01-counter.adoc[Lab: Counter Component in Plain JavaScript]
-- link:labs/02-tabs.adoc[Lab: Tabs Component with Lit]
-
+* https://slides.com/hupf/tws22-wc/[Preliminary Slides]
+* link:counter-lab.adoc[Lab: Counter Component in Plain JavaScript]
+* https://lit.dev/tutorial/[Lab: Interactive Lit Tutorial (official)]
 
 == Further Topics
 
-- Implement Web Components with your favorite JavaScript framework (e.g. using https://angular.io/guide/elements[Angular elements], https://cli.vuejs.org/guide/build-targets.html#web-component[Vue Web Components] etc.)
-- Create a new app with your favorite JavaScript framework using the https://github.com/puzzle/puzzle-shell[Puzzle Shell] Web Components
+* Create a little project with Web Components (using plain browser APIs or with Lit for example)
+** Start with the https://open-wc.org/docs/development/generator/[Open Web Components generator]
+** Or start with a https://lit.dev/docs/tools/starter-kits/[Lit starter kit]
+* Convert an existing component written in any JavaScript framework to a Web Component
+* Implement a Web Component with your favorite JavaScript framework (e.g. using https://angular.io/guide/elements[Angular elements], https://cli.vuejs.org/guide/build-targets.html#web-component[Vue Web Components] etc.)
+* Create a new app with your favorite JavaScript framework using the https://github.com/puzzle/puzzle-shell[Puzzle Shell] Web Components
 
 
 == Resources
 
-- https://fronteers.nl/congres/2011/sessions/web-components-and-model-driven-views-alex-russell[Web Components and Model Driven Views], Alex Russell (2011)
-- https://github.com/WICG/webcomponents[Web Components Standards]
-- https://developer.mozilla.org/en-US/docs/Web/Web_Components[Web Components], MDN Web Docs
-- https://open-wc.org/[Open Web Components] (Guides, Libraries & Tools)
+* https://fronteers.nl/congres/2011/sessions/web-components-and-model-driven-views-alex-russell[Web Components and Model Driven Views], Alex Russell (2011)
+* https://github.com/WICG/webcomponents[Web Components Standards]
+* https://developer.mozilla.org/en-US/docs/Web/Web_Components[Web Components], MDN Web Docs
+* https://open-wc.org/[Open Web Components] (Guides, Libraries & Tools)
+* https://modern-web.dev/[Modern Web] (Guides, Libraries & Tools)
