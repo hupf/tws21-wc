@@ -81,7 +81,7 @@ class Counter extends HTMLElement {
 
 Can you see the log output when clicking on the button?
 
-Great, then you can add an element to the paragraph in your template, that we can use to display the current count:
+Great, then you can add an element to the paragraph in your template, that we can afterwards select and use to display the current count:
 
 [source,html]
 ----
@@ -90,7 +90,7 @@ Great, then you can add an element to the paragraph in your template, that we ca
 
 The implementation of the remaining counter logic is up to you:
 
-- Add a property on your component to store the current count
+- Add a property on your component class to store the current count
 - Initialize the property in the `constructor`
 - Increment the property and update the `textContent` of the `<span>` with the incremented value
 
@@ -105,7 +105,7 @@ Attach a shadow root to your Custom Element in the `constructor`:
 this.attachShadow({ mode: "open" });
 ----
 
-Append the template contents to `this.shadowRoot` instead of the Custom Element itself. Adjust the rest of the component log to use the shadow root.
+Append the template contents to `this.shadowRoot` instead of the Custom Element itself. Adjust the rest of the component log to use the shadow root and make the component work as before.
 
 Inspect the changes in your browser's dev tools.
 
@@ -133,4 +133,5 @@ Some ideas for further improvements of your component:
 
 - Reflect the count to an HTML attribute of your Custom Element (i.e. allow to initialize/set the count or read the count via an attribute)
 - https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent[Dispatch an event] with the new value whenever the count is incremented
-- Add https://developers.google.com/web/fundamentals/web-components/shadowdom#stylehooks[style hooks], i.e. allow to customize the look of your Custom Element via CSS Custom Properties
+- Add https://developers.google.com/web/fundamentals/web-components/shadowdom#stylehooks[style hooks], i.e. allow to customize the look of your Custom Element (e.g. the button's background color) via CSS Custom Properties
+- Convert your Custom Element to a Lit component (you can use the https://lit.dev/playground/[Lit playground] for the sake of simplicity) – but you may want to go through the https://lit.dev/tutorial/[Lit tutorial] first
