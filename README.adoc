@@ -1,8 +1,8 @@
-= Tech Workshop 2022 — Web Components
+= Tech Workshop 2021 — Web Components
 
 == Agenda
 
-* https://slides.com/hupf/tws22-wc/[Preliminary Slides]
+* https://slides.com/hupf/tws21-wc/[Preliminary Slides]
 * link:counter-lab.adoc[Lab: Counter Component in Plain JavaScript]
 * https://lit.dev/tutorial/[Lab: Interactive Lit Tutorial (official)]
 
